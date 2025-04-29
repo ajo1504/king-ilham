@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsif Web Design</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background-color: #fc5ead;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 20px;
+            flex: 1 1 25%;
+            box-sizing: border-box;
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            flex: 1 1 75%;
+            box-sizing: border-box;
+        }
+
+        /* Media Queries untuk layar kecil */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            .sidebar, .content {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Judul Halaman</h1>
+</header>
+
+<main>
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Menu, info tambahan, atau apa saja di sini.</p>
+    </div>
+    <div class="content">
+        <h2>Konten Utama</h2>
+        <p>Ini area untuk artikel, teks, gambar, atau isi utama lainnya.</p>
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 Nama Anda. Hak Cipta Dilindungi.
+</footer>
+
+</body>
+</html>

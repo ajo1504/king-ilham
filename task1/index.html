@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judul Halaman</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #e63a7f;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 25%;
+            background-color:#c3e30c;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content {
+            width: 75%;
+            background-color: rgb(91, 222, 35);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Judul Halaman</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Isi menu samping atau informasi tambahan di sini.</p>
+    </div>
+    <div class="content">
+        <h2>Konten Utama</h2>
+        <p>Ini adalah bagian utama dari halaman Anda. Letakkan artikel, teks, gambar, dll di sini.</p>
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 Nama Anda. Hak Cipta Dilindungi.
+</footer>
+
+</body>
+</html>

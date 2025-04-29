@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>function reverseString(str) {
+        // Cek apakah input bertipe string
+        if (typeof str !== "string") {
+            return "Input harus berupa string!";
+        }
+    
+        // Cek string kosong
+        if (str.length === 0) {
+            return "Input string kosong!";
+        }
+    
+        // Balik string
+        return str.split("").reverse().join("");
+    }
+    
+    // Contoh penggunaan
+    console.log(reverseString("hello")); // Output: "olleh"
+    console.log(reverseString(""));       // Output: "Input string kosong!"
+    console.log(reverseString(123));      // Output: "Input harus berupa string!</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penggunaan API dengan JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h1>Daftar Pengguna</h1>
+<ul id="user-list">
+    <!-- Data pengguna akan ditampilkan di sini -->
+</ul>
+
+<script>
+    // Ambil elemen ul
+    const userList = document.getElementById('user-list');
+
+    // Fetch data dari API
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Gagal mengambil data API');
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(user => {
+                const li = document.createElement('li');
+                li.textContent = `${user.name} - ${user.email}`; // <- sudah diperbaiki
+                userList.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error('Terjadi kesalahan:', error);
+            userList.innerHTML = '<li>Gagal memuat data pengguna.</li>';
+        });
+</script>
+
+</body>
+</html>
