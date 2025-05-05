@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Nama Pengguna</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    #greeting {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: rgb(236, 9, 108);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Masukkan Nama Pengguna</h1>
+
+  <form id="userForm">
+    <input type="text" id="usernameInput" placeholder="Nama Anda" required>
+    <button type="submit">Simpan</button>
+  </form>
+
+  <div id="greeting"></div>
+
+  <script>
+    // Cek jika nama pengguna sudah ada di localStorage saat halaman dimuat
+    const savedName = localStorage.getItem("username");
+    const greeting = document.getElementById("greeting");
+
+    if (savedName) {
+      greeting.textContent = `Halo, ${savedName}!`;
+    }
+
+    // Tangani submit form
+    document.getElementById("userForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Mencegah refresh halaman
+      const input = document.getElementById("usernameInput");
+      const name = input.value.trim();
+
+      if (name) {
+        localStorage.setItem("username", name);
+        greeting.textContent = `Halo, ${name}!`;
+        input.value = ""; // Kosongkan form
+      }
+    });
+  </script>
+
+</body>
+</html>
